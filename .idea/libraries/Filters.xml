@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Filters">
+    <ANNOTATIONS>
+      <root url="file://$PROJECT_DIR$/Filters.zip" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Filters.zip" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/Filters.zip" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/Filters.zip" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/Filters.zip" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/Filters.zip" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/Filters.zip" recursive="false" type="SOURCES" />
+  </library>
+</component>
