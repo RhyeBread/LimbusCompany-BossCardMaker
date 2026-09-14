@@ -41,7 +41,7 @@ public class GetIcons {
             case REGULAR -> {tile = getTile(coinIconSheet, coinIconDimensions, 0, 0);}
             case UNBREAKABLE -> {tile = getTile(coinIconSheet, coinIconDimensions, 3, 0);}
             case EXCISION -> {tile = getTile(coinIconSheet, coinIconDimensions, 1, 1);}
-            case PURPLE -> {tile = getTile(coinIconSheet, coinIconDimensions, 3, 0);}
+            case PURPLE -> {tile = getTile(coinIconSheet, coinIconDimensions, 7, 1);}
         }
         return tile;
     }

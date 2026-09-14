@@ -31,9 +31,8 @@ public class SkillTemplate extends JPanel {
         //Icons
         GetIcons icon = new GetIcons();
         JLabel skillIconContainer = new JLabel(new ImageIcon(
-                icon.getSkillIcon(
-                        Types.skillFrame.STRONGEST, Types.sin.ENVY
-)                        .getScaledInstance(125, 125, Image.SCALE_SMOOTH)
+                icon.getSkillIcon(Types.skillFrame.STRONGEST, Types.sin.ENVY)
+                        .getScaledInstance(125, 125, Image.SCALE_SMOOTH)
         ));
         
         skillIconContainer.setBounds(0, 0, 100, 115);

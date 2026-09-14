@@ -6,6 +6,7 @@ package limbusbossmaker.bosses;
 
 import java.util.List;
 import java.util.Map;
+
 import limbusbossmaker.Boss;
 import limbusbossmaker.BossSkill;
 import limbusbossmaker.Passives;
@@ -15,7 +16,7 @@ import limbusbossmaker.Types;
  *
  * @author Ryan
  */
-public class BossExample extends Boss{
+public class ExampleBoss extends Boss {
     float maxHealth = 1200;
     String name = "Ricardo";
     
@@ -64,12 +65,12 @@ public class BossExample extends Boss{
             ""
     );
 
-    public BossExample(String name,
-            float maxHealth,
-            Map<Integer, Integer> sinAffinities,
-            List<BossSkill> skills,
-            List<Passives> passives,
-            List<String> traits) {
+    public ExampleBoss(String name,
+                       float maxHealth,
+                       Map<Integer, Integer> sinAffinities,
+                       List<BossSkill> skills,
+                       List<Passives> passives,
+                       List<String> traits) {
         super(name, maxHealth, sinAffinities, skills, passives, traits);
     }
     

@@ -1,0 +1,42 @@
+{
+  "colors": [
+    {
+      "green": {
+        "values": [
+          "[Attack End]",
+          "[On Hit]",
+          "[On Hit without Cracking]",
+          "[On Kill]",
+          "[On Crit]",
+          "[On Evade]",
+          "[Failed Evade]",
+          "[Target Fixed]",
+          "[Combat Start]",
+          "[Turn End]"],
+        "color": "#94f140"
+      }
+    },
+
+    {
+      "blue": {
+        "values": ["[On Use]"],
+        "color": "#26cfff"
+      }
+    },
+
+    {
+      "orange": {
+        "values": ["[Clash Win]"],
+        "color": "#ff7e00"
+      }
+    },
+
+    {
+      "red": {
+        "values": ["[Clash Lose]"],
+        "color" : "#e20000"
+      }
+    }
+
+  ]
+}

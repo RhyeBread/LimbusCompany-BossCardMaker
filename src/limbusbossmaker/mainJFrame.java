@@ -12,6 +12,7 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import com.google.gson.Gson;
 import limbusbossmaker.templates.SkillTemplate;
 
 /**

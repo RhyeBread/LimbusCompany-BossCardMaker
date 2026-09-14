@@ -28,5 +28,7 @@ public class GetAsset {
         return(customFont.deriveFont(fontSize));
     }
 
-
+    public static URL getJsonURI(String fileName){
+        return(GetAsset.class.getResource("/limbusbossmaker/assets/json/"+fileName));
+    }
 }
