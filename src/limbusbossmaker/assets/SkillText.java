@@ -20,12 +20,10 @@ public class SkillText extends JLabel {
     public SkillText(String text) throws IOException, FontFormatException {
 
         setFont(GetAsset.getFont("roboto.ttf", 16f));
-        setForeground(Color.WHITE);
-
-        setText(checkForSpecialText("<html>" + text + "</html>"));
+        setText("<html><p color = #FFFFFF style = 'align-items: bottom'>" + checkForSpecialText(text) + "</p></html>");
     }
 
-    public String checkForSpecialText(String text) throws FileNotFoundException {
+    public String checkForSpecialText(String text) {
 
         try {
             File textColor = new File(GetAsset.getJsonURI("textColor.json").toURI());
@@ -89,25 +87,46 @@ public class SkillText extends JLabel {
                         )));
             }
         }
+
+        for(Types.neutralEffect effect: Types.neutralEffect.values()){
+            if(text.contains(effect.toString())){
+                text = text.replaceAll(effect.toString(),
+                        addInlineImage(icon.getNeutralIcon(effect))
+                        + setNeutralTextColor(capitalizeString(effect.toString()
+                        )));
+            }
+        }
         return text;
     }
 
     public String capitalizeString(String string){
-        return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+        String[] words = string.split("_");
+        StringBuilder result = new StringBuilder();
+
+        for(String word: words){
+            result.append(Character.toTitleCase(word.charAt(0)))
+                    .append(word.substring(1).toLowerCase())
+                    .append(" ");
+        }
+        return result.toString().trim();
     }
 
     public String addInlineImage(BufferedImage image) throws IOException{
         String imagePath = GetIcons.makeTempFile(image);
-        String html = "<img src=%s width='23' height='23' style='vertical-align: -5px;'/>"
+        String html = "<img src=%s width='23' height='23' style='margin-top:-5px'>"
                 .formatted(new File(imagePath).toURI());
         return html;
     }
 
     public String setDebuffTextColor(String text){
-        return "<font color = #e20000 text-decoration: underline> <u>%s</u> </font>".formatted(text);
+        return "<font color = #e20000> <u>%s</u> </font>".formatted(text);
     }
 
     public String setBuffTextColor(String text){
-        return "<font color = #fac400; text-decoration = underline> <u>%s</u> </font>".formatted(text);
+        return "<font color = #fac400> <u>%s</u> </font>".formatted(text);
+    }
+
+    public String setNeutralTextColor(String text){
+        return "<font color = #9f6a3a><u>%s</u></font>".formatted(text);
     }
 }

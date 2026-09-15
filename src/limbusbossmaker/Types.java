@@ -74,6 +74,11 @@ public class Types {
         CHARGE,
     }
 
+    public enum neutralEffect{
+        UNBREAKABLE_COIN,
+        PURPLE_COIN
+    }
+
 
 
 }

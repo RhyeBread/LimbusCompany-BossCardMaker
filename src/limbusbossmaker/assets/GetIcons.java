@@ -43,6 +43,7 @@ public class GetIcons {
             case EXCISION -> {tile = getTile(coinIconSheet, coinIconDimensions, 1, 1);}
             case PURPLE -> {tile = getTile(coinIconSheet, coinIconDimensions, 7, 1);}
         }
+
         return tile;
     }
 
@@ -163,6 +164,7 @@ public class GetIcons {
             case SINKING -> {tile = getTile(statusIconSheet, statusIconDimensions, 1, 0);}
             case TREMOR -> {tile = getTile(statusIconSheet, statusIconDimensions, 0, 0);}
         }
+
         return tile;
     }
 
@@ -177,7 +179,17 @@ public class GetIcons {
         return tile;
     }
 
-    private BufferedImage getTile(
+    public BufferedImage getNeutralIcon(Types.neutralEffect statusEffect){
+        BufferedImage tile = null;
+        switch (statusEffect){
+            case UNBREAKABLE_COIN -> {tile = getCoinIcon(Types.coin.UNBREAKABLE);}
+            case PURPLE_COIN -> {tile = getCoinIcon(Types.coin.PURPLE);}
+        }
+
+        return tile;
+    }
+
+    private static BufferedImage getTile(
             BufferedImage sheet,
             int dimensions,
             int x,

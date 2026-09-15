@@ -4,6 +4,7 @@
  */
 package limbusbossmaker.templates;
 
+import javax.imageio.stream.ImageInputStream;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -30,6 +31,7 @@ public class SkillTemplate extends JPanel {
 
         //Icons
         GetIcons icon = new GetIcons();
+
         JLabel skillIconContainer = new JLabel(new ImageIcon(
                 icon.getSkillIcon(Types.skillFrame.STRONGEST, Types.sin.ENVY)
                         .getScaledInstance(125, 125, Image.SCALE_SMOOTH)
@@ -47,12 +49,11 @@ public class SkillTemplate extends JPanel {
         JPanel coinPanel = new JPanel(
         new FlowLayout(FlowLayout.RIGHT, 1, 0)
         );
-        
-        
-        Image coin = ImageIO.read(GetAsset.getImageURL("regular_coin.png"));
+
         for (int i = 0; i < 5; i++){ //TODO CHANGE '5' TO COIN COUNT!!!!!!!!!!!!!!!!!!!
             JLabel coinContainer = new JLabel(new ImageIcon(
-                    coin.getScaledInstance(30, 30, Image.SCALE_SMOOTH)
+                    icon.getCoinIcon(Types.coin.UNBREAKABLE)
+                            .getScaledInstance(30, 30, Image.SCALE_SMOOTH)
             ));
             coinPanel.add(coinContainer);
             coinPanel.setOpaque(false);
@@ -64,7 +65,7 @@ public class SkillTemplate extends JPanel {
         
         //Text for Skills
         JLabel skillLabel = new JLabel();
-        skillLabel.setText("MY HAIR COUPOOOOOOOOOOONS!!!");
+        skillLabel.setText("Savage Tigerslayer's Perfected Flurry of Blades [超絕猛虎殺擊亂斬]");
         try {
             skillLabel.setFont(GetAsset.getFont("mikodacs.ttf", 16f));
         } catch (FontFormatException ex) {
@@ -102,9 +103,7 @@ public class SkillTemplate extends JPanel {
                If the main target has less than 0 SP, Final Power +5
                [On Use] All enemies on field gain +10 CHARGE count
                [On Hit] Raise Stagger Threshold by 30
-               [On Hit] Inflict 1 TREMOR next turn
-               [On Kill] Lose the encounter
-               [Clash Win] Die
+               [On Hit] Inflict 20 TREMOR count next turn
                """;
         SkillText skillDescriptionLabel = new SkillText(skillPretext);
 
