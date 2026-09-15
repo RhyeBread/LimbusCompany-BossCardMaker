@@ -1,0 +1,6 @@
+* text = auto
+
+*.txt text eol = 1f
+*.class text eol = 1f
+
+*.png binary
